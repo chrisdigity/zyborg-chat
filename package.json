@@ -1,0 +1,12 @@
+{
+   "name": "zyborg-chat",
+   "version": "0.0.1",
+   "main": "index.js",
+   "scripts": {
+      "start": "node index.js"
+   },
+   "dependencies": {
+      "chatgpt": "^2.0.5",
+      "discord.js": "^14.7.1"
+   }
+}
