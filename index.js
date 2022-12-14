@@ -6,8 +6,12 @@ const Zyborg = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 Zyborg.on("ready", async () => {
   try {
-    const { ChatGPTAPI } = await import('chatgpt');
-    const api = new ChatGPTAPI({ sessionToken: process.env.SESSION_TOKEN });
+    const { ChatGPTAPI, getOpenAIAuth } = await import('chatgpt');
+    const openAIAuth = await getOpenAIAuth({
+      email: process.env.OPENAI_EMAIL,
+      password: process.env.OPENAI_PASSWORD
+    });
+    const api = new ChatGPTAPI({ ...openAIAuth });
     await api.ensureAuth();
 
     const conversation = api.getConversation();
