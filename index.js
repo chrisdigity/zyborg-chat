@@ -1,6 +1,7 @@
 /* eslint-env node, es6 */
 /* eslint-disable no-console */
 
+require('dotenv').config();
 const { Client, GatewayIntentBits } = require('discord.js');
 const Zyborg = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
